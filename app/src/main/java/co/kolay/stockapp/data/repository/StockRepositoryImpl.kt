@@ -1,5 +1,6 @@
 package co.kolay.stockapp.data.repository
 
+import android.util.Log
 import co.kolay.stockapp.data.csv.CSVParser
 import co.kolay.stockapp.data.local.StockDatabase
 import co.kolay.stockapp.data.mapper.toCompanyListing
@@ -46,6 +47,7 @@ class StockRepositoryImpl @Inject constructor(
 
             val remoteListings = try {
                 val response = api.getListings()
+                Log.d("FATAL", "response: ${response.byteStream()}")
                 companyListingParser.parse(response.byteStream())
             } catch (e: IOException) {
                 e.printStackTrace()
@@ -57,6 +59,7 @@ class StockRepositoryImpl @Inject constructor(
                 null
             }
 
+            Log.d("FATAL", "getCompanyListings: $remoteListings")
             remoteListings?.let { listings ->
                 dao.clearCompanyListings()
                 dao.insertCompanyListings(

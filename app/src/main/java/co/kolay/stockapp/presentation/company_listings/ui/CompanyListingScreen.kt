@@ -26,7 +26,7 @@ import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 @Composable
 @Destination(start = true)
 fun CompanyListingScreen(
-    navigator: DestinationsNavigator,
+//    navigator: DestinationsNavigator,
     viewModel: CompanyListingsViewModel = hiltViewModel(),
 ) {
     val state = viewModel.state
@@ -56,7 +56,7 @@ fun CompanyListingScreen(
             singleLine = true
         )
         SwipeRefresh(
-            state =swipeToRefreshState,
+            state = swipeToRefreshState,
             onRefresh = {
                 viewModel.onEvent(CompanyListingEvent.Refresh)
             }
