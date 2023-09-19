@@ -31,7 +31,6 @@ class CompanyListingsViewModel @Inject constructor(
     fun onEvent(event: CompanyListingEvent){
         when(event){
             is CompanyListingEvent.Refresh -> {
-                Log.d("FATAL", "onEvent: Called")
                 getCompanyListings(fetchFromRemote = true)
             }
             is CompanyListingEvent.OnSearchQueryChange -> {
@@ -45,7 +44,7 @@ class CompanyListingsViewModel @Inject constructor(
         }
     }
 
-    fun getCompanyListings(
+    private fun getCompanyListings(
         query: String = state.searchQuery.toLowerCase(),
         fetchFromRemote: Boolean = false
     ) {

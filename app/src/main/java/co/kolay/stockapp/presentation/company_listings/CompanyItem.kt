@@ -1,4 +1,4 @@
-package co.kolay.stockapp.presentation.company_listings.ui
+package co.kolay.stockapp.presentation.company_listings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row

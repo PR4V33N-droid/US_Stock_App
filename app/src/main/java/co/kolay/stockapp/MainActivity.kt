@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import co.kolay.stockapp.presentation.company_listings.CompanyListingsViewModel
-import co.kolay.stockapp.presentation.company_listings.ui.CompanyListingScreen
+import co.kolay.stockapp.presentation.company_listings.CompanyListingScreen
 import co.kolay.stockapp.ui.theme.StockAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
